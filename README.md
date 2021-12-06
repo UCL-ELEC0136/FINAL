@@ -1,4 +1,4 @@
-![Build](workflows/build/badge.svg)
+![Build](https://github.com/UCL-ELEC0136/FINAL/workflows/build/badge.svg)
 ---
 # Data Acquisition and Processing Systems (DaPS) (ELEC0136)
 
