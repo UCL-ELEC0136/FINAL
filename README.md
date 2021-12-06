@@ -15,7 +15,7 @@ This repository contains the scaffolding for submitting your code.
 Here are some must and some advices on how to write your code.
 
 - Must:
-  - Have a [conda environment file](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#create-env-file-manually), name `environment.yml`, which only specifies the python version you are using. Do not export your environment automatically.
+  - Have a [conda environment file](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#create-env-file-manually), name `environment.yml`, which only specifies the python version you are using. Do not export your environment automatically. __The environment must be named dasp.__
   - Have a [pip requirements file](https://pip.pypa.io/en/stable/user_guide/#requirements-files), named`requirements.txt` file in the root of this repository.
   - Have an `assignment.ipynb` notebook file that contains a `def main():` function. This function must run all the code necessary to produce the figures, tables and any other ingredient that you included in the written report. Write your code in a way that this material is saved on disk. Plotting this material on screen will result in errors. You can write all your assignment in a python file, or any other method your prefer, but you must use the notebook to write this function.
   
