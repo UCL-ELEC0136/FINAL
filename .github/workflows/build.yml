@@ -1,0 +1,33 @@
+name: build
+
+on: [push]
+
+jobs:
+  build-linux:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      max-parallel: 5
+      matrix:
+        python-version: [3.7, 3.8]
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v2
+      with:
+        python-version: ${{ matrix.python-version }}
+    - name: Install dependencies
+      run: |
+        # $CONDA is an environment variable pointing to the root of the miniconda directory
+        $CONDA/bin/conda env create -f environment.yml
+        $CONDA/bin/conda activate daps
+        $CONDA/bin/conda install pip
+        $CONDA/bin/pip install -r requirements.txt
+        $CONDA/bin/pip jupyter jupyterlab nbconvert
+    - name: Converting notebook into python file
+      run: |
+        nbconvert --no-prompt --to script assignment.ipynb
+    - name: Test with pytest
+      run: |
+        python assignment.py
