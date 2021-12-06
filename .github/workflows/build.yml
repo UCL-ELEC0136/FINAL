@@ -26,7 +26,7 @@ jobs:
         $CONDA/bin/conda install jupyter jupyterlab nbconvert
     - name: Converting notebook into python file
       run: |
-        nbconvert --no-prompt --to script assignment.ipynb
+        jupyter nbconvert --no-prompt --to script assignment.ipynb
     - name: Test with pytest
       run: |
         python assignment.py
