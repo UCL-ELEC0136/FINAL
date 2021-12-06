@@ -17,13 +17,11 @@ jobs:
       uses: actions/setup-python@v2
       with:
         python-version: ${{ matrix.python-version }}
-    - name: Setup conda
-      run: conda init bash
     - name: Install dependencies
       run: |
-        conda env create -f environment.yml
-        conda activate daps
-        conda install pip
+        $CONDA/bin/conda env create -f environment.yml
+        $CONDA/bin/activate daps
+        $CONDA/bin/conda install pip
         pip install -r requirements.txt
         pip jupyter jupyterlab nbconvert
     - name: Converting notebook into python file
