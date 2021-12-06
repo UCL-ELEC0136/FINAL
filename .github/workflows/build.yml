@@ -17,14 +17,15 @@ jobs:
       uses: actions/setup-python@v2
       with:
         python-version: ${{ matrix.python-version }}
+    - name: Setup conda
+      uses: s-weigand/setup-conda@v1
     - name: Install dependencies
       run: |
-        # $CONDA is an environment variable pointing to the root of the miniconda directory
-        $CONDA/bin/conda env create -f environment.yml
-        $CONDA/bin/conda activate daps
-        $CONDA/bin/conda install pip
-        $CONDA/bin/pip install -r requirements.txt
-        $CONDA/bin/pip jupyter jupyterlab nbconvert
+        conda env create -f environment.yml
+        conda activate daps
+        conda install pip
+        pip install -r requirements.txt
+        pip jupyter jupyterlab nbconvert
     - name: Converting notebook into python file
       run: |
         nbconvert --no-prompt --to script assignment.ipynb
