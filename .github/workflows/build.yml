@@ -23,7 +23,7 @@ jobs:
         $CONDA/bin/activate daps
         $CONDA/bin/conda install pip
         pip install -r requirements.txt
-        $CONDA/bin/conda install jupyter jupyterlab nbconvert
+        pip install jupyter jupyterlab nbconvert
     - name: Converting notebook into python file
       run: |
         jupyter nbconvert --no-prompt --to script assignment.ipynb
