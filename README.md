@@ -18,6 +18,7 @@ Here are some must and some advices on how to write your code.
   - Have a [conda environment file](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#create-env-file-manually), name `environment.yml`, which only specifies the python version you are using. Do not export your environment automatically. __The environment must be named dasp.__
   - Have a [pip requirements file](https://pip.pypa.io/en/stable/user_guide/#requirements-files), named`requirements.txt` file in the root of this repository.
   - Have an `assignment.ipynb` notebook file that contains a `def main():` function. This function must run all the code necessary to produce the figures, tables and any other ingredient that you included in the written report. Write your code in a way that this material is saved on disk. Plotting this material on screen will result in errors. You can write all your assignment in a python file, or any other method your prefer, but you must use the notebook to write this function.
+  - Do not modify or delete the `.github/workflows/build.yml`. This will be used for automatic checks.
   
 - Advices:
   - Make your code readable, don't overthink its performance. This is an academic assignment, not production code.
@@ -26,7 +27,8 @@ Here are some must and some advices on how to write your code.
   - Use the __automatically generated__ `feedback` pull request (__do not__ open another pull request) to comment on your own code, clarify obscure parts, or fancy computations.
   - The notebook is only __an example__ on how to solve this assignment. Other than the `main` function, there is no need to use this template.
 
-  
+
+The courious ones can check the `.github/workflows/build.yml` file to see what the automatic checks will do.
 
 ### Submitting your assignment
 
