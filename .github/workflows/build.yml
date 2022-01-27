@@ -1,6 +1,6 @@
-name: build
+name: run-check
 
-on: [push]
+on: workflow_dispatch
 
 jobs:
   build-linux:
